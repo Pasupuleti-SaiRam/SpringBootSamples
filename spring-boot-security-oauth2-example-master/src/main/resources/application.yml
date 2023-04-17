@@ -1,0 +1,24 @@
+security:
+  oauth2:
+    client:
+       clientId: ae2844a00ff0375180d4
+       clientSecret: 456984eb86cdb4f04e8fc465c15ce576bee90786
+       accessTokenUri: https://github.com/login/oauth/access_token
+       userAuthorizationUri: https://github.com/login/oauth/authorize
+       clientAuthenticationScheme: form
+    resource:
+      user-info-uri: https://api.github.com/user
+      prefer-token-info: false 
+      
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/Employee
+    password: Sai@ram4404
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9090

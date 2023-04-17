@@ -1,0 +1,25 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: CLOUD-API-GATEWAY
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: stock-price-api
+        uri: lb://STOCK-PRICE-API
+        predicates:
+        - Path=/price/{companyName}
+        
+      - id: stock-price-calc-api
+        uri: http://localhost:2222/
+        predicates:
+        - Path=/calc/{cname}/{quantity}  
+
+
